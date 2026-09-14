@@ -23,6 +23,10 @@ def runCmd(String commande) {
 pipeline {
     agent any
 
+    environment {
+        PATH = "C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python312;C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python312\\Scripts;${env.PATH}"
+    }
+
     stages {
         stage('Récupération du code') {
             steps {

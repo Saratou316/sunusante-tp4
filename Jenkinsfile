@@ -1,16 +1,5 @@
 // Pipeline Jenkins pour SunuSanté (chapitre 4).
-//
-// Chaque stage correspond à une étape du workflow vu en cours :
-// Récupération du code -> Build -> Standard de code -> Tests -> Sécurité.
-// Un stage rouge arrête le pipeline : c'est le "feedback" du serveur CI au
-// dépôt, en quelques minutes plutôt qu'en semaines (cf. chapitre 4, partie 1).
-//
-// Portabilité (voir INSTALLATION_JENKINS.md) : avec l'agent Docker
-// (recommandé), tous les stages tournent dans un conteneur Linux, quel
-// que soit le système d'exploitation qui héberge Jenkins. Si vous utilisez
-// `agent any` (agent Jenkins natif, sans Docker), runCmd() bascule
-// automatiquement entre `sh` (Linux/macOS) et `bat` (Windows) : aucune
-// autre ligne du pipeline n'a besoin de changer.
+
 
 def runCmd(String commande) {
     if (isUnix()) {
